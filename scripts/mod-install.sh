@@ -22,6 +22,7 @@ fi
 echo ">>> Downloading zdharma-continuum/zinit module to $ZINIT_HOME/mod-bin"
 if test -d "$ZINIT_HOME/mod-bin/.git"; then
   cd "$ZINIT_HOME/mod-bin"  || exit 9
+  git chekcout -- .
   git pull origin main
 else
   cd "$ZINIT_HOME" || exit 9
@@ -45,6 +46,12 @@ if test -f Makefile; then
     echo "$col_info2-- make clean (pass --clean to invoke \`make distclean') --$col_rst"
     make clean
   fi
+fi
+
+echo "$col_info2-- applying patches --$col_rst"
+autoload -z is-at-least
+if is-at-least 5.8.1; then
+  git apply 0001-Fix-zsh-5.8.1-compatibility.patch
 fi
 
 echo "$col_info2-- ./configure --$col_rst"
