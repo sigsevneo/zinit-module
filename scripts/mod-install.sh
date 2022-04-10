@@ -12,7 +12,7 @@ echo "${col_info}Re-run this script to update (from Github) and rebuild the modu
 # Clone or pull
 #
 
-ZINIT_HOME="${ZINIT_HOME:-$HOME}/.zinit"
+ZINIT_HOME="${ZINIT_HOME:-$HOME/.zinit}"
 
 if ! test -d "$ZINIT_HOME"; then
   mkdir "$ZINIT_HOME"
