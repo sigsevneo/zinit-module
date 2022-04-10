@@ -51,7 +51,7 @@ fi
 echo "$col_info2-- applying patches --$col_rst"
 autoload -z is-at-least
 if is-at-least 5.8.1; then
-  git apply 0001-Fix-zsh-5.8.1-compatibility.patch
+  git apply 0001-zsh-5.8.1-compatibility.patch
 fi
 
 echo "$col_info2-- ./configure --$col_rst"
