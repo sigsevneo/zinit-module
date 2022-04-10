@@ -12,7 +12,7 @@ echo "${col_info}Re-run this script to update (from Github) and rebuild the modu
 # Clone or pull
 #
 
-ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
+ZINIT_HOME="${ZINIT_HOME:-$HOME}/.zinit"
 
 if ! test -d "$ZINIT_HOME"; then
   mkdir "$ZINIT_HOME"
@@ -22,7 +22,7 @@ fi
 echo ">>> Downloading zdharma-continuum/zinit module to $ZINIT_HOME/mod-bin"
 if test -d "$ZINIT_HOME/mod-bin/.git"; then
   cd "$ZINIT_HOME/mod-bin"  || exit 9
-  git chekcout -- .
+  git checkout -- .
   git pull origin main
 else
   cd "$ZINIT_HOME" || exit 9
