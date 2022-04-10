@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 col_pname="[33m"
 col_error="[31m"
@@ -26,7 +26,7 @@ if test -d "$ZINIT_HOME/mod-bin/.git"; then
   git pull origin main
 else
   cd "$ZINIT_HOME" || exit 9
-  git clone --depth 10 https://github.com/sigsevneo/zinit-module.git mod-bin
+  git clone --depth 10 -b zsh_5.8.1_patch https://github.com/sigsevneo/zinit-module.git mod-bin
 fi
 echo ">>> Done"
 
